@@ -8,6 +8,8 @@
  * Historique : 
  *  19/11/2019 Marie-Pierre Pinaud Ajout Commentaires des fonctions
  *                                 Ajout des commentaires du fichier
+ *  19/12/2019  Correction des commentaires de avancer, reculer, clignoterRouge, 
+ *              clignoterVert
  */
 
 #include "p18f87j50.h"  		// mOway's microcontroller
@@ -53,7 +55,7 @@ void attendre(unsigned char millisecondes) { // Au moins 10ms
 
 /********************************************************
 *Nom : avancer                                         
-* Rôle : fait avancer le robot tout droit pendant 20ms 
+* Rôle : fait avancer le robot tout droit 
 ********************************************************/
 void avancer() {
 	
@@ -62,7 +64,7 @@ void avancer() {
 
 /********************************************************
 *Nom : reculer                                         
-*Rôle : fait reculer le robot  pendant 20ms           
+*Rôle : fait reculer le robot             
 ********************************************************/
 void reculer() {
 	
@@ -108,8 +110,8 @@ float calculerAccelerationVerticale() {
 
 /*********************************************************
 *Nom : clignoterRouge                                   
-* Rôle : allume la led rouge   et fait une pause       
-*Valeur de retour :durée de la pause en millisecondes  
+* Rôle : fait clignoter la led rouge et fait une pause       
+*Paramètre d'entrée : durée de la pause en millisecondes  
 ********************************************************/
 void clignoterRouge(unsigned char demiPeriodeMillisecondes) {
     
@@ -118,8 +120,8 @@ void clignoterRouge(unsigned char demiPeriodeMillisecondes) {
 
 /*********************************************************
 *Nom : clignoterVerte                                   
-* Rôle : allume la led verte   et fait une pause        
-*Valeur de retour :durée de la pause en millisecondes   
+* Rôle : fait clignoter la led verte et fait une pause        
+*Paramètre d'entrée : durée de la pause en millisecondes   
 *********************************************************/
 void clignoterVert(unsigned char demiPeriodeMillisecondes) {
    
