@@ -13,8 +13,7 @@
  */
 
 #include "p18f87j50.h"  		// mOway's microcontroller
-#include "lib_sen_moway.h"		// Sensors library
-#include "lib_mot_moway.h"		// Motors library
+#include "MowayLibrary.h"		// Motors and Sensors library
 
 #include "commandesMoway.h"
 
@@ -90,7 +89,7 @@ unsigned char calculerDistanceParcourue() {
     char distance[2];
     distance[0] = MOT_FDBCK(STATUS_KM)[0];
     distance[1] = MOT_FDBCK(STATUS_KM)[1];
-    return (distance[1]*256 + distance[1]);
+    return (distance[1]*256 + distance[0]);
 }
 
 
