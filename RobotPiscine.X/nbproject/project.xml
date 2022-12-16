@@ -11,11 +11,14 @@
             <header-extensions>h</header-extensions>
             <asminc-extensions/>
             <sourceEncoding>ISO-8859-1</sourceEncoding>
+            <make-dep-projects/>
             <sourceRootList>
                 <sourceRootElem>.</sourceRootElem>
                 <sourceRootElem>C:\Users\marie-pierre\Documents\Limayrac\COURS\MiniProjet\ProjetPiscine\ProjetRobotPiscine\CodeProjet\includes</sourceRootElem>
                 <sourceRootElem>../CodeProjet/sources</sourceRootElem>
                 <sourceRootElem>../CodeProjet/linker</sourceRootElem>
+                <sourceRootElem>../CodeProjet/libraries</sourceRootElem>
+                <sourceRootElem>../CodeProjet/includes</sourceRootElem>
             </sourceRootList>
             <confList>
                 <confElem>
@@ -26,7 +29,6 @@
             <formatting>
                 <project-formatting-style>false</project-formatting-style>
             </formatting>
-            <make-dep-projects/>
         </data>
     </configuration>
 </project>

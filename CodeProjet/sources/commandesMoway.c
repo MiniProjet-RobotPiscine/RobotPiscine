@@ -10,6 +10,8 @@
  *                                 Ajout des commentaires du fichier
  *  19/12/2019  Correction des commentaires de avancer, reculer, clignoterRouge, 
  *              clignoterVert
+ * 16/12/2022  ajout de void en paramètre des fonctions sans paramètre
+ * 16/12/2022  ajout du code dans arreterRobot
  */
 
 #include "p18f87j50.h"  		// mOway's microcontroller
@@ -22,7 +24,7 @@
 *Nom : configurerMoway                                 
 * Rôle : configure les moteurs et les capteurs du moway
 ********************************************************/
-void configurerMoway() {
+void configurerMoway(void) {
     MOT_CONFIG();
     SEN_CONFIG();
 }
@@ -33,7 +35,8 @@ void configurerMoway() {
 *Rôle : récupère le pourcentage de batterie           
 *Valeur de retour :   pourcentage de batterie restant  
 ********************************************************/
-unsigned char lireBatterie() {
+unsigned char lireBatterie(void) {
+    // A MODIFIER
   return 100;  
 }
 
@@ -56,7 +59,7 @@ void attendre(unsigned char millisecondes) { // Au moins 10ms
 *Nom : avancer                                         
 * Rôle : fait avancer le robot tout droit 
 ********************************************************/
-void avancer() {
+void avancer(void) {
 	
 }
 
@@ -65,7 +68,7 @@ void avancer() {
 *Nom : reculer                                         
 *Rôle : fait reculer le robot             
 ********************************************************/
-void reculer() {
+void reculer(void) {
 	
 }
 
@@ -74,8 +77,8 @@ void reculer() {
 *Nom : arreterRobot                                    
 * Rôle : arrêter tous les mouvements du robot          
 ********************************************************/
-void arreterRobot() {
-	
+void arreterRobot(void) {
+	MOT_STOP();
 }
 
 
@@ -85,7 +88,7 @@ void arreterRobot() {
 *        correspondant à son dernier déplacement       
 *Valeur de retour :     distance parcourue             
 ********************************************************/
-unsigned char calculerDistanceParcourue() {
+unsigned char calculerDistanceParcourue(void) {
     char distance[2];
     distance[0] = MOT_FDBCK(STATUS_KM)[0];
     distance[1] = MOT_FDBCK(STATUS_KM)[1];
@@ -99,7 +102,7 @@ unsigned char calculerDistanceParcourue() {
 *Valeur de retour :   valeur en g de l'accélération    
 *                     verticale                        
 ********************************************************/
-float calculerAccelerationVerticale() {
+float calculerAccelerationVerticale(void) {
     // axe vertical Z orienté + vers le bas
     // Robot à plat posé au fond si 1g sur l'axe vertical
     
@@ -153,7 +156,7 @@ void faireDemiTour(void)
 * Rôle : lit la valeur du capteur de ligne gauche       
 * Valeur de retour :  1 si ligne nore détectée, 0 sinon                                                   
 *********************************************************/
-unsigned char lireCapteurLigneGauche() {
+unsigned char lireCapteurLigneGauche(void) {
     
     return 0;
 }
@@ -164,7 +167,7 @@ unsigned char lireCapteurLigneGauche() {
 * Rôle : lit la valeur du capteur de ligne gauche       
 * Valeur de retour :  1 si ligne nore détectée, 0 sinon                                                    
 *********************************************************/
-unsigned char lireCapteurLigneDroit() {
+unsigned char lireCapteurLigneDroit(void) {
     
     return 0;
 }

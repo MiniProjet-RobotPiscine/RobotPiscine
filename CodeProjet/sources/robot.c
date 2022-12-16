@@ -7,10 +7,13 @@
  * Historique : 
  *  19/11/2019 Marie-Pierre Pinaud Ajout Commentaires des fonctions + Rôle du fichier
  *  19/11/2019 Marie-Pierre Pinaud modification du paramètre parcoursTermine
+ *  16/12/2022  ajout de void en paramètre des fonctions sans paramètre
+ *  16/12/2022  code de attenteImmersion. Ajout de code et de commentaires dans
+ *  explorerPiscine
  */
-
-#include "robot.h"
 #include "commandesMoway.h"
+#include "robot.h"
+
 
 
 /*****************************************************************************
@@ -34,7 +37,7 @@ void initialiserRobot(TRobot* robot)
 *Valeur de retour :   1 si batterie insuffisante, 0 s'il y a assez de batterie                               
 ******************************************************************************/
 unsigned char chargeInsuffisante(TRobot* robot) {
-    
+    // A MODIFIER
     return 1;
 }
 
@@ -44,8 +47,15 @@ unsigned char chargeInsuffisante(TRobot* robot) {
 * Rôle : attend que le robot soit à l'horizontal. Si le temps d'attente 
 * d'immersion est dépassé, termine sur état irrécupérable.                                                               
 ******************************************************************************/
-void attendreImmersion() {
-    
+void attendreImmersion(void) {
+    unsigned char tempsAttente = 0; // secondes
+    while(robotRetourne() == 1 ) {
+        attendre(1000);
+        tempsAttente += 1;
+        if(tempsAttente == TEMPS_ATTENTE_IMMERSION) {
+            terminerSurEtatIrrecuperable();
+        }
+    }
     
 }
 
@@ -58,7 +68,7 @@ void attendreImmersion() {
 void explorerPiscine(TRobot* robot) {
    
     while(1) {
-        
+        robot->distanceParcourue += (unsigned int)calculerDistanceParcourue();
         if(robotRetourne() == 1) {
             attendreImmersion();
         }
@@ -66,6 +76,12 @@ void explorerPiscine(TRobot* robot) {
             terminerParcours();
         }
         
+        // si la charge est insuffisante alors terminer en indiquant que 
+        // la batterie est dechargée
+        
+        
+        // Traiter le cas où un bord est atteint 
+     
     }
 }
 
@@ -74,7 +90,7 @@ void explorerPiscine(TRobot* robot) {
 *Nom : terminerParcours                                
 * Rôle : arrêter le robot et le faire clignoter en vert                                                                  
 ******************************************************************************/
-void terminerParcours() {
+void terminerParcours(void) {
     
 }
 
@@ -86,7 +102,7 @@ void terminerParcours() {
 *Valeur de retour :   1 si la distance a été parcourue, 0 sinon                             
 ******************************************************************************/
 unsigned char parcoursTermine(TRobot * robot) {
-   
+    // A MODIFIER
         return 0;
     
 }
@@ -97,9 +113,8 @@ unsigned char parcoursTermine(TRobot * robot) {
 *Valeur de retour :   1 si le robot est retourné, 0 sinon                             
 ******************************************************************************/
 
-unsigned char robotRetourne() {
+unsigned char robotRetourne(void) {
     
-        return 0;
     
 }
 
@@ -109,7 +124,7 @@ unsigned char robotRetourne() {
 * Rôle : vérifie si un bord de la piscine est atteint  
 *Valeur de retour :   1 si un bord est atteint, 0 sinon                               
 ******************************************************************************/
-unsigned char bordAtteint() {
+unsigned char bordAtteint(void) {
     
         return 0;
    
@@ -120,7 +135,7 @@ unsigned char bordAtteint() {
 *Nom : terminerSurBatterieDechargee                                
 * Rôle : arrêter le robot et le faire clignoter en rouge lent                                                                   
 ******************************************************************************/
-void terminerSurBatterieDechargee() {
+void terminerSurBatterieDechargee(void) {
     
 }
 
@@ -129,7 +144,7 @@ void terminerSurBatterieDechargee() {
 *Nom : terminerSurEtatIrrecuperable                                
 * Rôle : arrêter le robot et le faire clignoter en rouge rapide                                                                   
 ******************************************************************************/
-void terminerSurEtatIrrecuperable() {
+void terminerSurEtatIrrecuperable(void) {
     
 }
 

@@ -8,6 +8,7 @@
  *  19/11/2019 Marie-Pierre Pinaud Ajout Commentaires des fonctions + Rôle du fichier
  *  19/11/2019 Marie-Pierre Pinaud Ajout de T au début des noms des types
  *  19/11/2019 Marie-Pierre Pinaud modification du paramètre parcoursTermine
+ *  16/12/2022  ajout de void en paramètre des fonctions sans paramètre
  */
 #ifndef FONCTIONS_H
 #define	FONCTIONS_H
@@ -60,7 +61,7 @@ unsigned char chargeInsuffisante(TRobot* robot);
 * Rôle : attend que le robot soit à l'horizontal. Si le temps d'attente 
 * d'immersion est dépassé, termine sur état irrécupérable.                                                               
 ******************************************************************************/
-void attendreImmersion();
+void attendreImmersion(void);
 
 
 /*****************************************************************************
@@ -75,19 +76,19 @@ void explorerPiscine(TRobot* robot);
 *Nom : terminerSurBatterieDechargee                                
 * Rôle : arrêter le robot et le faire clignoter en rouge lent                                                                   
 ******************************************************************************/
-void terminerSurBatterieDechargee();
+void terminerSurBatterieDechargee(void);
 
 /*****************************************************************************
 *Nom : terminerSurEtatIrrecuperable                                
 * Rôle : arrêter le robot et le faire clignoter en rouge rapide                                                                   
 ******************************************************************************/
-void terminerSurEtatIrrecuperable();
+void terminerSurEtatIrrecuperable(void);
 
 /*****************************************************************************
 *Nom : terminerParcours                                
 * Rôle : arrêter le robot et le faire clignoter en vert                                                                  
 ******************************************************************************/
-void terminerParcours();
+void terminerParcours(void);
 
 
 /*****************************************************************************
@@ -95,7 +96,7 @@ void terminerParcours();
 * Rôle : vérifie si un bord de la piscine est atteint  
 *Valeur de retour :   1 si un bord est atteint, 0 sinon                               
 ******************************************************************************/
-unsigned char bordAtteint();
+unsigned char bordAtteint(void);
 
 /*****************************************************************************
 *Nom : parcoursTermine                                
@@ -112,7 +113,7 @@ unsigned char parcoursTermine(TRobot* robot);
 * Rôle : vérifie si le robot est toujours à l(horizontale                            
 *Valeur de retour :   1 si le robot est retourné, 0 sinon                             
 ******************************************************************************/
-unsigned char robotRetourne();
+unsigned char robotRetourne(void);
 
 
 

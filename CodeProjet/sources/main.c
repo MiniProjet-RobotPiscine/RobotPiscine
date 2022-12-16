@@ -19,6 +19,9 @@ void _reset (void) {
 void main() {
     TRobot robot;
     initialiserRobot(&robot); 
+    
+    // si la charge est insuffisante alors terminer sur batterie déchargée
+    // sinon attendre l'immersion et démarrer explorerPiscine
         
        
 	

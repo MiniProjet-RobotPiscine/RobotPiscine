@@ -24,7 +24,7 @@ extern "C" {
 * Rôle : configure les moteurs et les capteurs du moway
 ********************************************************/
     
-void configurerMoway();
+void configurerMoway(void);
 
 
 /********************************************************
@@ -32,7 +32,7 @@ void configurerMoway();
 *Rôle : récupère le pourcentage de batterie           
 *Valeur de retour :   pourcentage de batterie restant  
 ********************************************************/
-unsigned char lireBatterie();
+unsigned char lireBatterie(void);
 
 /********************************************************
 *Nom : attendre                                        
@@ -46,19 +46,19 @@ void attendre(unsigned char millisecondes);
 *Nom : avancer                                         
 * Rôle : fait avancer le robot tout droit 
 ********************************************************/
-void avancer();
+void avancer(void);
 
 /********************************************************
 *Nom : reculer                                         
 *Rôle : fait reculer le robot            
 ********************************************************/
-void reculer();
+void reculer(void);
 
 /********************************************************
 *Nom : arreterRobot                                    
 * Rôle : arrêter tous les mouvements du robot          
 ********************************************************/
-void arreterRobot();
+void arreterRobot(void);
 
 /********************************************************
 *Nom : calculerDistanceParcourue                       
@@ -66,7 +66,7 @@ void arreterRobot();
 *        correspondant à son dernier déplacement       
 *Valeur de retour :     distance parcourue             
 ********************************************************/
-unsigned char calculerDistanceParcourue();
+unsigned char calculerDistanceParcourue(void);
 
 
 /*********************************************************
@@ -75,7 +75,7 @@ unsigned char calculerDistanceParcourue();
 *Valeur de retour :   valeur en g de l'accélération    
 *                     verticale                        
 ********************************************************/
-float calculerAccelerationVerticale();
+float calculerAccelerationVerticale(void);
 
 /*********************************************************
 *Nom : clignoterRouge                                   
@@ -111,7 +111,7 @@ void faireDemiTour(void);
 * Rôle : lit la valeur du capteur de ligne gauche       
 * Valeur de retour :  1 si ligne nore détectée, 0 sinon                                                   
 *********************************************************/
-unsigned char lireCapteurLigneGauche();
+unsigned char lireCapteurLigneGauche(void);
                                                                                                               
                                                                                                               
 /*********************************************************
@@ -119,7 +119,7 @@ unsigned char lireCapteurLigneGauche();
 * Rôle : lit la valeur du capteur de ligne gauche       
 * Valeur de retour :  1 si ligne nore détectée, 0 sinon                                                    
 *********************************************************/
-unsigned char lireCapteurLigneDroit();
+unsigned char lireCapteurLigneDroit(void);
 
 #ifdef	__cplusplus
 }
